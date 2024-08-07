@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZORPAY</title>
+    <!-- IMPORTING FEATHER LIBRARY FOR ICONS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- LINKING FONT MULISH -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<style>
+    /* THIS CLASS IS UISED TO POSITION BACKGROUND IMAGE OF CORE FEATURE SECTION */
+    .coreFeature{
+        background-size: 100% 100%;
+    }
+    /* ANIMATION */
+    .companyList{
+        animation: 15s infinite linear moveCompany backwards;
+    }
+    @keyframes moveCompany
+    {
+      0%{
+        top:0;
+      }
+      100%{
+        top:-100%;
+      }
+    }
+    /* Gradient for divs of animated image */
+    .grad{
+        background: linear-gradient(180deg,#f4f8ff,#fff0);
+    }
+    .grad1{
+        background: linear-gradient(0deg,#f4f8ff,#fff0);
+    }
+  
+</style>
+   
+</head>
+<body>
+<!-- CREATING A WRAPPER DIV TO CONTAIN ALL CODE. -->
+<div class="overflow-x-hidden relative w-ful">
+
+    <!-- CREATING A NAV BAR WITH A BACKGROUND COLOR THAT WE CUSTOM DEFINED IN TAILWIND CONFIGURATION FILE  -->
+    <nav class="bg-deepBlue">
+        <!-- CREATING A DIV INSIDE THE NAV BAR WHICH WILL CONTAIN ALL THE NAV ITEMS AND WILL BE DISPLAYED AS FLEX WITH RELATIVE POSITION.
+        NOTE THAT w-[1080px] IS THE WIDTH OF THE DIV,mx-auto IS THAE MARGIN:0,AUTO TO ALIGN THE DIV AT CENTER HORIZONTOLLY,item-center IS THE ALIGN-ITEMS:CENTER; TO POSITION EACH NAV ITEM AT CENTER ALONG VERTICAL AXIS AND justify-between IS THE JUSTIFY-CONTENT:SPACE-BETWEEN OF THE FLEX -->
+
+      <!--======================
+            MEDIA QUERY
+        ======================== -->
+        <!-- 'lg:justify-between' use this only for large screens otherwise for rest of screen sizes use justify-around -->
+     <div class="relative w-[1080px] mx-auto flex items-center lg:justify-between justify-around">
+        <!-- CREATING THE LOGO WITH THE LINK WHICH ON CLICK GETS TO HOMEPAGE.THE cursor-pointer WILL TURN THE CURSOR INTO POINTER ON HOVER,py-7 IS THE TOP AND BOTTOM PADDING OF 1.75REM AND pr-7 IS THE PADDING-RIGHT OF 1.75REM -->
+        <a href="/" class="cursor-pointer py-7 pr-7">
+            <!-- Inserting logo within 'a' tag -->
+            <img src="/images/logo.svg" alt="" width="125px" height="30px">
+        </a>
+    <!-- Creating a 'ul' which contains nav items as list items and the 'ul' will be displayed as flex.Setting gap of 20px b/w items as well-->
+
+    <!-- =======================
+          MEDIA QUERY
+        ====================== -->
+    <!-- 'lg:flex' means when screen size is large,make it flex and thus visible but normally it will remain hidden -->
+    <ul class="lg:flex hidden gap-5">
+        <!-- On hovering the list items,color of text changes to light blue and transition is defined for color changes with duration of 200ms and list item is set as relative positioned so that we can position it's child div(underline on hover) as absolute.
+        'group' is a class used to style an element based on the state of some parent element, we mark the parent with the group class, and use group-* modifiers like group-hover to style the target element.Since we will use the div to represnt the underline which is visible when list item is hovered.The div will be the child and needs to be styled based on parent,becox parent is hovered and child is displayed,so we need to set the class 'group' to the parent so that we can use 'group-hover' property to display underline on hover -->
+<!-- ===================================
+            IST LIST/NAV ITEM 
+    ===================================-->
+        <li class="text-white font-mulish py-7 hover:text-lightBlue cursor-pointer transition-colors duration-200 group relative">
+<!-- Using the 'a' tag to include the nav item. -->
+<a href="#">Payments</a>
+<!-- using div to include the underline visible on hover.The div is psitioned at 0 from bottom with 100% widtrh of parent container(li) with height of h-1(0.25rem) and opacity set to 0 at ist but when group is hovered,opacity is set to 100(i:e opacity=1).'group-hover' represents when parent (li) is hovered.Also transition is set to the opacity with duration of 200ms-->
+<div class="absolute bottom-0 w-full h-1 opacity-0 bg-lightBlue group-hover:opacity-100 transition-opacity duration-200"></div>
+        </li>
+<!-- ===================================
+            2ND LIST/NAV ITEM 
+    ===================================-->
+        <li class="text-white font-mulish py-7 hover:text-lightBlue cursor-pointer transition-colors duration-200 group relative">
+
+            <a href="#">Banking</a>
+
+            <div class="absolute bottom-0 w-full h-1 opacity-0 bg-lightBlue group-hover:opacity-100 transition-opacity duration-200"></div>
+        </li>
+<!-- ===================================
+            3RD LIST/NAV ITEM 
+    ===================================-->
+    <li class="text-white font-mulish py-7 hover:text-lightBlue cursor-pointer transition-colors duration-200 group relative">
+
+        <a href="#">Corporate Card</a>
+<!-- THIS ITEM DOES NOT DISPLAY UNDERLINE ON HOVER -->
+
+        <!-- <div class="absolute bottom-0 w-full h-1 opacity-0 bg-lightBlue group-hover:opacity-100 transition-opacity duration-200"></div> -->
+    </li>
+<!-- ===================================
+            4TH LIST/NAV ITEM 
+    ===================================-->
+    <li class="text-white font-mulish py-7 hover:text-lightBlue cursor-pointer transition-colors duration-200 group relative">
+
+        <a href="#">Payroll</a>
+
+<!-- THIS ITEM DOES NOT DISPLAY UNDERLINE ON HOVER -->
+
+        <!-- <div class="absolute bottom-0 w-full h-1 opacity-0 bg-lightBlue group-hover:opacity-100 transition-opacity duration-200"></div> -->
+    </li>
+<!-- ===================================
+            5TH LIST/NAV ITEM 
+    ===================================-->
+    <li class="text-white font-mulish py-7 hover:text-lightBlue cursor-pointer transition-colors duration-200 group relative">
+
+        <a href="#">Resources</a>
+
+        <div class="absolute bottom-0 w-full h-1 opacity-0 bg-lightBlue group-hover:opacity-100 transition-opacity duration-200"></div>
+    </li>
+<!-- ===================================
+            6TH LIST/NAV ITEM 
+    ===================================-->
+    <li class="text-white font-mulish py-7 hover:text-lightBlue cursor-pointer transition-colors duration-200 group relative">
+
+        <a href="#">Support</a>
+
+        <div class="absolute bottom-0 w-full h-1 opacity-0 bg-lightBlue group-hover:opacity-100 transition-opacity duration-200"></div>
+    </li>
+<!-- ===================================
+            7TH LIST/NAV ITEM 
+    ===================================-->
+    <li class="text-white font-mulish py-7 hover:text-lightBlue cursor-pointer transition-colors duration-200 group relative">
+
+        <a href="#">Pricing</a>
+
+        <div class="absolute bottom-0 w-full h-1 opacity-0 bg-lightBlue group-hover:opacity-100 transition-opacity duration-200"></div>
+    </li>
+    </ul>
+<!-- Creating a div which includes flag and 2 buttons. -->
+<div class="flex gap-4  ">
+    <!-- FLAG-IMAGE -->
+    <!-- ====================
+          MEDIA QUERY
+          'lg:block' means display it as block for large screen only else keep it hidden
+        =================== -->
+    <img src="/images/india-flag.svg" width="20px" height="20px" class="hidden lg:block">
+    <!-- LOGIN BUTTON:-The background color of button is same as of nav bar.'border' provides a border to the button and rounded-sm is border-radius-->
+<button class="py-3 px-4 font-mulish text-white border-lightBlue border rounded-sm text-sm font-bold">Log in</button>
+<!-- SIGN-UP BUTTON: -->
+<button class="py-3 px-3 font-mulish text-sm font-bold bg-white text-lightBlue300 border rounded-sm hover:text-lightBlue500 transition-text duration-200 hidden lg:block">Sign up
+    <!-- ADDING AN SVG ARROW OFFLINE --> 
+
+<!-- <img src="/images/arrow-right.svg" alt="" class="inline-block ml-1" width="14px" height="14px"> -->
+
+<!-- ADDING SVG ARROW USING ONLINE LINK https://fontawesomeicons.com/svg/icons/arrow-right -->
+
+<svg class="inline-block ml-1" xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" id="mainIconPathAttribute"  stroke-width="0" stroke="#ff0000" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="-0.8" dy="-0.2" flood-color="black"></feDropShadow></filter></svg>
+    
+</button>
+
+</div>
+
+
+     </div> <!--NAV-ITEMS DIV ENDS-->   
+</nav>
+
+<!-- ====================================
+              HERO SECTION
+ ==================================== -->
+ <!-- creating a section for hero-section which will contain whole content of hero section.This section covers entire width and height of hero section-->
+<section class="relative bg-deepBlue">
+  <!-- Creating  a div within the section which contains the  left and right part of the ist portion of hero section.The 2nd part contains a dive for a traingilar shaped image-->
+
+  <!-- IST PART OF HERO-SECTION WHICH CONTAINS LEFT AND RIGHT PART OF HERO SECTION   -->
+  <!-- w-10/12 =width 83% becox 10/12=0.83....,max-width set to 1080px so when the width is normal it will be 83% but if it exceeds 83% it wont be more than 1080px,mx-auto to center it horizontolly with equal margins -->
+
+  <!-- =========================
+         MEDIA QUERY
+      ========================= -->
+  <!-- 'lg:flex-row' defines flex-dirtexn will be row for large screen sizes (>1024px),In rest of the cases we use flex-col direxn -->
+   <div class="flex lg:flex-row flex-col w-10/12 max-w-[1080px] justify-between items-center mx-auto">
+    <!-- =============================
+              LEFT-PART
+        ============================ -->
+    <!-- leading=line-height -->
+          <div class="space-y-8">
+            <h1 class="font-mulish font-bold text-[40px] leading-[1.2] text-white">Power your finance, grow your business</h1>
+
+            <!-- div tag for undrline -->
+            <div class="w-6 h-1 bg-greenLight"></div>
+<!-- capitalize class transform ist letter of each word into uppercase -->
+            <p class="font-mulish text-[18px] leading-7 text-white opacity-70 capitalize">Accept payments from customers. Automate payouts to vendors &
+                employees. Never run out of working capital.</p>
+<!-- rounded-md is border-radius medium -->
+            <button class="bg-lightBlue text-white rounded-md font-mulish font-bold hover:bg-lightBlue500 transition-colors duration-200 py-[16px] px-[10px]">Sign up Now
+                <!-- ADDING ARROW IOCON USING SVG -->
+                <svg class="inline-block ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="17" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" id="mainIconPathAttribute"  stroke-width="0" stroke="#ff0000" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="-0.8" dy="-0.2" flood-color="black"></feDropShadow></filter></svg>
+            </button>
+          </div>
+    <!-- =======================
+             RIGHT PART
+    ============================== -->
+
+    <img src="/images/hero-illustration.jpg" alt="" class="max-w-[680px]">
+   </div>
+   <!-- 2ND PART OF HERO SECTION(TRAINGULAR IMG SHAPE) -->
+   <!-- By positioning the div as absolute with left-0 and right-0 means it will stretch to the entire width  -->
+   <div class="absolute left-0 right-0 w-[100%] overflow-x-hidden">
+    <img src="/images/hero-shape.svg" alt="" class="w-full object-fill scale-x-105">
+   </div>
+</section>
+<!-- ==============================        
+      FEATURE-SECTION-1
+=============================-->
+<!-- overflow:hidden becox the dotted image is same on both sides but on left side only few lnes are visible,rest of the dotted lines overflow this section and thus set to hidden -->
+<section class="relative mt-[190px] overflow-hidden">
+<!-- 2 dotted images on top right and top left -->
+<!-- loading="lazy" allows the image to load only when it is visible on viewport.The image will not be loaded until it isn't within the viewport -->
+<img src="/images/feature-section1-dottedrows.png" alt="" loading="lazy" width="233" height="167" class="absolute -top-[8rem] left-[5rem] inline-block">
+<!--  In above image top position is set to -8rem which in tailwind is written as '-top' -->
+<img src="/images/feature-section1-dottedrows.png" alt="" loading="lazy" width="233" height="167" class="absolute top-[2rem] right-0 inline-block rotate-180">
+<!-- Main div for content of Feature Section  -->
+
+<div class="relative w-10/12 max-w-[1080px] mx-auto pt-4">
+<!-- A heading and a div for underline -->
+<!-- ==================================
+       MEDIA QUERY
+  Normally we want the ist heading heading to be hidden but will be visible from medium screen size onwards(hidden md:block) but for screen sizes smaller than medium,we want 2nd heading to be displayed(md:hidden) -->
+<h2 class="text-center font-mulish text-2xl leading-[1.2] font-extrabold hidden md:block">Accept Payments with Razorpay Payment Suite</h2>
+<h2 class="text-center font-mulish text-4xl leading-[1.8] font-extrabold  md:hidden">Explore with Razorpay Payment Suite</h2>
+<div class="w-8 h-1 bg-greenLight mx-auto mt-2 mb-6"></div>
+<!-- Content Box Div -->
+<div class="w-full min-h-[520px] bg-white flex rounded-md relative px-10 py-2 border border-gray-200 mt-[4.5rem]">
+    <!-- left section div-->
+    <div class="flex flex-col justify-evenly w-full">
+    <h3 class="font-mulish text-[28px] font-extrabold leading-10 max-w-[500px] ">Supercharge your business with the all-powerful
+    <span class="text-lightBlue">Payment Gateway</span>
+    </h3>
+    <!-- unordered list for features -->
+    <ul class="space-y-2 ">
+<!-- Creating each list-item as flex  so that the icon and the text are in single line as 2 flex-items-->
+    <li class="font-mulish flex items-center gap-2">
+      <!-- Using Feather library to add icon -->
+      <i data-feather="check" class="text-greenLight"></i>
+            <span>100+ Payment Methods</span>
+        </li>
+        <li class="font-mulish flex items-center gap-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span> Industry Leading Success Rate </span>
+        </li>
+        <li class="font-mulish flex items-center gap-2"> 
+            <i data-feather="check" class="text-greenLight"></i>
+            <span> Superior Checkout Experience </span>
+        </li>
+        <li class="font-mulish flex items-center gap-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span> Easy to Integrate </span>
+        </li>
+        <li class="font-mulish flex items-center gap-1">
+         <i data-feather="check" class="text-greenLight"></i>
+            <span> Instant Settlements from day 1 </span>
+        </li>
+        <li class="font-mulish flex items-center gap-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span> In-depth Reporting and Insights </span>
+        </li>
+    </ul>
+   <!-- Div for Button and Hyperlink -->
+   <!-- ============================
+            MEDIA QUERY
+      Normally we want this div to be in flex-col-reverse  direxn so that hyperlink comes at the top but from medium size screen onwards we want it to be as flex-row,thus from 768px onwards,it will be flex-row.Also items will be placed at center vertically from onwards of medium size screens but for the rest of the screen sizes as the flex direxn is column-reverse,items will be placed at start of the flex horizontolly since the main axis will be vertical and items-start will work on horizontal axis.Also gap-4 for medium screen size onwards otherwise gap along y-axis set to 6
+    ====================================-->
+   <div class="flex flex-col-reverse md:flex-row md:items-center items-start md:gap-4 gap-y-6">
+  <!-- ================================
+         MEDIA QUERY
+    Width of button will be set to fit for medium scrren and onwards and for rest of the screen sizes,it will be set to full
+    ================================== -->
+    <button class="bg-lightBlue md:w-fit w-full text-white py-[14px] px-[18px] font-mulish rounded-md font-bold  hover:bg-lightBlue500 transition-colors duration-200 ">Sign Up Now
+        <!-- ADDING ARROW ICON USING SVG.Using the svg as inline-block so that it comes horizontolly with button text.We can use button as flex as well if we do not use svg as inline-block -->
+        <svg class="inline-block ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" id="mainIconPathAttribute"  stroke-width="0" stroke="#ff0000" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="-0.8" dy="-0.2" flood-color="black"></feDropShadow></filter></svg>
+    </button>
+    <!-- hyperlink -->
+    <!-- using class flex so that text and icon come horizontolly with each other.Also using it group so that when parent is hovered,we can see changes in child 'a' tag -->
+    <div class="flex items-center cursor-pointer group">
+        <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:text-grayBlue transition-colors duration-200">Know More</a>
+        <!-- For the icon we have to set same properties for hover as we set for hyperlink -->
+        <i data-feather="chevron-right"
+        class="w-5 h-5 text-lightBlue500 group-hover:text-grayBlue transition-colors duration-200"> </i>
+    </div>  
+    </div>
+   </div>   <!--Left Section div ends-->
+   <!-- Div for background image -->
+
+   <!-- =====================
+          MEDIA QUERY
+    Normally setting the image hidden but will be visible with max-w-620px for large screens and will be visible for medium screens with max-width-400px
+    ============================== -->
+   <div>
+      <img src="/images/payment-suite.png" alt="" class="absolute lg:max-w-[620px] hidden md:max-w-[400px] right-0 bottom-0 md:block lg:block">
+   </div>
+</div>  <!--Content Box Div ends-->
+
+<!-- ================================================================================
+           GRID-SECTION WITHIN FEATURE SECTION'S  MAIN DIV
+    ================================================================================== -->
+    <!-- creating a 3 column grid and rows will automatically be 2 for 6 boxes.Setting width full which is 100% of it's parent(body) -->
+    <!-- =============================
+          MEDIA QUERY
+      Normally set the single column,for medium display size,set two columns and for large display sizes set 3 grid columns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16  ">
+
+        <!-- ===============================
+                     BOX-1
+            ================================= -->
+        <!-- by setting width full,it will take all available width for a columm cell -->
+          <div class="w-full min-h-[15rem] relative cursor-pointer group">
+            <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+              <img src="/images/payment-link-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-gray-100 to-lightBlue">
+              <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+              <!-- below we used a drop-shadow with arbitary values as defined in tailwind documentation -->
+              <svg 
+                viewBox="0 0 349.32501220703125 225"                                                           
+                xmlns="http://www.w3.org/2000 svg"                                                               preserveAspectRatio="none"
+                        class="stroke-1 stroke-[#818597] h-full w-full absolute z-[9] transition-all duration-200 group-hover:group-hover:drop-shadow-[0_2px_22px_rgba(202,202,202,0.35)]"
+                         style="stroke-opacity: 0.15">
+                          <path
+                                d="m 0 6 
+                            a 6 6 0 0 1 6 -6 
+                            h 250.32501220703125 
+                            a 16 16 0 0 1 11 5 
+                            l 77 77 
+                            a 16 16 0 0 1 5 11 
+                            v 126 
+                            a 6 6 0 0 1 -6 6 
+                            h -337.32501220703125 
+                            a 6 6 0 0 1 -6 -6 
+                            z"
+                                fill="#fff"
+                          ></path>
+             </svg>
+        
+             <!-- box-content-div -->
+             <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+             <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-6 group">
+                <!-- text-part of box-content -->
+                <div class="">
+                    <h3 class="font-mulish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Links</h3>
+        
+                    <p class="font-mulish text-grayText mt-6">Share payment link via an email, SMS, messenger, chatbot etc. and get paid immediately</p>
+                </div>
+        
+                <!-- hyperlink and icon part of box-content -->
+                <div>
+                    <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+                
+                </div>
+             </div>  <!--box-content div ends-->
+             <!-- Wave on hover -->
+             <div>
+                <img src="/images/features-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[25%]">
+             </div>
+         </div>
+        <!-- ==================
+                   BOX-2 
+            ====================-->
+
+        <div class="w-full min-h-[15rem] relative cursor-pointer group">
+            <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+              <img src="/images/payment-link-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-gray-100 to-lightBlue">
+              <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+              <svg 
+                viewBox="0 0 349.32501220703125 225"                                                            xmlns="http://www.w3.org/2000/svg"                                                               preserveAspectRatio="none"
+                        class="stroke-1 stroke-[#818597] h-full w-full absolute z-[9] transition-all duration-200 group-hover:group-hover:drop-shadow-[0_2px_22px_rgba(202,202,202,0.35)]"
+                         style="stroke-opacity: 0.15">
+                          <path
+                                d="m 0 6 
+                            a 6 6 0 0 1 6 -6 
+                            h 250.32501220703125 
+                            a 16 16 0 0 1 11 5 
+                            l 77 77 
+                            a 16 16 0 0 1 5 11 
+                            v 126 
+                            a 6 6 0 0 1 -6 6 
+                            h -337.32501220703125 
+                            a 6 6 0 0 1 -6 -6 
+                            z"
+                                fill="#fff"
+                          ></path>
+             </svg>
+        
+             <!-- box-content-div -->
+             <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+             <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-6 group">
+                <!-- text-part of box-content -->
+                <div class="">
+                    <h3 class="font-mulish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Pages</h3>
+        
+                    <p class="font-mulish text-grayText mt-6">                        Take your store online instantly with zero coding. Accept international & domestic payments</p>
+                </div>
+        
+                <!-- hyperlink and icon part of box-content -->
+                <div>
+                    <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 inline-block text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200"> </i>
+                
+                </div>
+             </div>  <!--box-content div ends-->
+              <!-- Wave on hover -->
+              <div>
+                <img src="/images/features-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[25%]">
+             </div>
+         </div>
+
+        <!-- BOX-3 -->
+         <!-- by setting width full,it will take all available width for a columm cell -->
+         <div class="w-full min-h-[15rem] relative cursor-pointer group">
+            <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+              <img src="/images/payment-link-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-gray-100 to-lightBlue">
+              <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+              <!-- below we used a drop-shadow with arbitary values as defined in tailwind documentation -->
+              <svg 
+                viewBox="0 0 349.32501220703125 225"                                                           
+                xmlns="http://www.w3.org/2000 svg"                                                               preserveAspectRatio="none"
+                        class="stroke-1 stroke-[#818597] h-full w-full absolute z-[9] transition-all duration-200 group-hover:group-hover:drop-shadow-[0_2px_22px_rgba(202,202,202,0.35)]"
+                         style="stroke-opacity: 0.15">
+                          <path
+                                d="m 0 6 
+                            a 6 6 0 0 1 6 -6 
+                            h 250.32501220703125 
+                            a 16 16 0 0 1 11 5 
+                            l 77 77 
+                            a 16 16 0 0 1 5 11 
+                            v 126 
+                            a 6 6 0 0 1 -6 6 
+                            h -337.32501220703125 
+                            a 6 6 0 0 1 -6 -6 
+                            z"
+                                fill="#fff"
+                          ></path>
+             </svg>
+        
+             <!-- box-content-div -->
+             <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+             <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-6 group">
+                <!-- text-part of box-content -->
+                <div class="">
+                    <h3 class="font-mulish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Buttons</h3>
+        
+                    <p class="font-mulish text-grayText mt-6">Create, Copy & Collect With Payment Button. Collect one time or subscription payments & more</p>
+                </div>
+        
+                <!-- hyperlink and icon part of box-content -->
+                <div>
+                    <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 inline-block text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200"> </i>
+                
+                </div>
+             </div>  <!--box-content div ends-->
+             <!-- Wave on hover -->
+             <div>
+                <img src="/images/features-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[25%]">
+             </div>
+         </div> 
+
+
+        <!-- BOX-4 -->
+        <!-- by setting width full,it will take all available width for a columm cell -->
+        <div class="w-full min-h-[15rem] relative cursor-pointer group">
+            <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+              <img src="/images/payment-link-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-gray-100 to-lightBlue">
+              <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+              <!-- below we used a drop-shadow with arbitary values as defined in tailwind documentation -->
+              <svg 
+                viewBox="0 0 349.32501220703125 225"                                                           
+                xmlns="http://www.w3.org/2000 svg"                                                               preserveAspectRatio="none"
+                        class="stroke-1 stroke-[#818597] h-full w-full absolute z-[9] transition-all duration-200 group-hover:group-hover:drop-shadow-[0_2px_22px_rgba(202,202,202,0.35)]"
+                         style="stroke-opacity: 0.15">
+                          <path
+                                d="m 0 6 
+                            a 6 6 0 0 1 6 -6 
+                            h 250.32501220703125 
+                            a 16 16 0 0 1 11 5 
+                            l 77 77 
+                            a 16 16 0 0 1 5 11 
+                            v 126 
+                            a 6 6 0 0 1 -6 6 
+                            h -337.32501220703125 
+                            a 6 6 0 0 1 -6 -6 
+                            z"
+                                fill="#fff"
+                          ></path>
+             </svg>
+        
+             <!-- box-content-div -->
+             <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+             <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-6 group">
+                <!-- text-part of box-content -->
+                <div class="">
+                    <h3 class="font-mulish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Subscriptions</h3>
+        
+                    <p class="font-mulish text-grayText mt-6">Subscription plans with automated recurring transactions on various payment modes.</p>
+                </div>
+        
+                <!-- hyperlink and icon part of box-content -->
+                <div>
+                    <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 inline-block text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200"> </i>
+                
+                </div>
+             </div>  <!--box-content div ends-->
+             <!-- Wave on hover -->
+             <div>
+                <img src="/images/features-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[25%]">
+             </div>
+         </div>
+
+
+        <!-- BOX-5 -->
+       
+          <!-- by setting width full,it will take all available width for a columm cell -->
+          <div class="w-full min-h-[15rem] relative cursor-pointer group">
+            <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+              <img src="/images/payment-link-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-gray-100 to-lightBlue">
+              <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+              <!-- below we used a drop-shadow with arbitary values as defined in tailwind documentation -->
+              <svg 
+                viewBox="0 0 349.32501220703125 225"                                                           
+                xmlns="http://www.w3.org/2000 svg"                                                               preserveAspectRatio="none"
+                        class="stroke-1 stroke-[#818597] h-full w-full absolute z-[9] transition-all duration-200 group-hover:group-hover:drop-shadow-[0_2px_22px_rgba(202,202,202,0.35)]"
+                         style="stroke-opacity: 0.15">
+                          <path
+                                d="m 0 6 
+                            a 6 6 0 0 1 6 -6 
+                            h 250.32501220703125 
+                            a 16 16 0 0 1 11 5 
+                            l 77 77 
+                            a 16 16 0 0 1 5 11 
+                            v 126 
+                            a 6 6 0 0 1 -6 6 
+                            h -337.32501220703125 
+                            a 6 6 0 0 1 -6 -6 
+                            z"
+                                fill="#fff"
+                          ></path>
+             </svg>
+        
+             <!-- box-content-div -->
+             <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+             <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-6 group">
+                <!-- text-part of box-content -->
+                <div class="">
+                    <h3 class="font-mulish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Route</h3>
+        
+                    <p class="font-mulish text-grayText mt-6">Split incoming payments automatically to vendor’s accounts, manage marketplace money flow...</p>
+                </div>
+        
+                <!-- hyperlink and icon part of box-content -->
+                <div>
+                    <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 inline-block text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200"> </i>
+                
+                </div>
+             </div>  <!--box-content div ends-->
+             <!-- Wave on hover -->
+             <div>
+                <img src="/images/features-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[25%]">
+             </div>
+         </div>
+
+        <!-- BOX-6 -->
+       
+       <!-- by setting width full,it will take all available width for a columm cell -->
+       <div class="w-full min-h-[15rem] relative cursor-pointer group">
+        <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+          <img src="/images/payment-link-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-gray-100 to-lightBlue">
+          <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+          <!-- below we used a drop-shadow with arbitary values as defined in tailwind documentation -->
+          <svg 
+            viewBox="0 0 349.32501220703125 225"                                                           
+            xmlns="http://www.w3.org/2000 svg"                                                               preserveAspectRatio="none"
+                    class="stroke-1 stroke-[#818597] h-full w-full absolute z-[9] transition-all duration-200 group-hover:group-hover:drop-shadow-[0_2px_22px_rgba(202,202,202,0.35)]"
+                     style="stroke-opacity: 0.15">
+                      <path
+                            d="m 0 6 
+                        a 6 6 0 0 1 6 -6 
+                        h 250.32501220703125 
+                        a 16 16 0 0 1 11 5 
+                        l 77 77 
+                        a 16 16 0 0 1 5 11 
+                        v 126 
+                        a 6 6 0 0 1 -6 6 
+                        h -337.32501220703125 
+                        a 6 6 0 0 1 -6 -6 
+                        z"
+                            fill="#fff"
+                      ></path>
+         </svg>
+    
+         <!-- box-content-div -->
+         <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+         <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-6 group">
+            <!-- text-part of box-content -->
+            <div class="">
+                <h3 class="font-mulish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Smart Collect</h3>
+    
+                <p class="font-mulish text-grayText mt-6">Automatically reconcile incoming NEFT, RTGS, IMPS, UPI payments using Customer Identifiers & UPI-IDs</p>
+            </div>
+    
+            <!-- hyperlink and icon part of box-content -->
+            <div>
+                <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                <i data-feather="chevron-right"
+                class="w-5 h-4 -ml-1 inline-block text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200"> </i>
+            
+            </div>
+         </div>  <!--box-content div ends-->
+         <!-- Wave on hover -->
+         <div>
+            <img src="/images/features-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[25%]">
+         </div>
+     </div>
+
+        </div> <!--GRID SECTION DIV ENDS-->
+
+</div>  <!--Main div of content of Feature Section ends-->
+     
+</section> <!--feature section ends-->
+
+<!--=============================   
+          FEATURE SECTION 2
+================================ -->
+<!-- 'pxr' is a class defined above in head tag used to position background image -->
+<section class="bg-[url(./images/feature-section-2BG.svg)] bg-no-repeat bg-cover overflow-x-hidden  pt-8 pb-[500px] mt-[4rem] pxr w-full">
+<!-- creating a top level container which contains whole content of this section having max-width:1080px.This top level div contains the 3 parts:main feature box,cards and demo section-->
+<div class="w-10/12 max-w-[1080px] pt-10 mx-auto relative mt-9">
+<!-- For heading and horizontol line -->
+    <h2 class="text-center font-mulish text-2xl leading-[1.2] font-extrabold text-white pt-[10rem]">Explore RazorpayX powered Business Banking</h2>
+    <div class="w-8 h-1 bg-greenLight mx-auto mt-4 mb-6"></div>
+
+<!-- Main feature BOX -->
+<div class="relative w-full  flex flex-col justify-between gap-4">
+
+<!-- adding two lightining images which are on left and right side -->
+<!-- z-index of the images has to be lower than the z-index of content box so that content box overlaps the images.We have not set it but may need to set it -->
+<img src="/images/x-flame-1.png" alt="" loading="lazy" class="absolute -top-[70px] -left-[150px] w-[200px] ">
+<img src="/images/x-flame-2.png" alt="" loading="lazy" class="absolute -right-[180px] top-[230px] w-[270px]">
+
+<!-- CONTENT BOX DIV -->
+<div class="w-full min-h-[500px] h-full rounded-md relative px-10 py-5 border border-slate-700 mt-[4rem] bg-[#181c2e]">
+    <!-- left section div -->
+    <!--RELATIVE CLASS AND Z-INDEX SET TO 20 SO THAT IT COMES AS TOP LAYER OVER THE BACKGROUND IMAGE SET IN LEFT DIV SECTION -->
+    <div class=" min-h-[400px] flex flex-col justify-between  w-full h-full items-start relative z-20">
+
+    <h3 class="font-mulish text-[28px] font-extrabold leading-10 max-w-[520px] text-white ">Manage your company’s finances and supercharge your 
+    <span class="text-greenLight">business banking</span>  with
+    <img src="/images/razorpayX.svg" alt="" loading="lazy" class="inline-block w-[168px] h-[32px]">
+    </h3>
+    <!-- unordered list for features -->
+    <ul class="space-y-2 ">
+<!-- Creating each list-item as flex  so that the icon and the text are in single line as 2 flex-items-->
+    <li class="font-mulish flex items-center gap-2">
+      <!-- Using Feather library to add icon -->
+      <i data-feather="check" class="text-greenLight"></i>
+            <span class="text-white">Open a fully digital current account</span>
+        </li>
+        <li class="font-mulish flex items-center space-x-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span class="text-white">Automate payables & compliment payments </span>
+        </li>
+        <li class="font-mulish flex items-center gap-2"> 
+            <i data-feather="check" class="text-greenLight"></i>
+            <span class="text-white">Simplify and track spends with Corporate cards</span>
+        </li>
+        <li class="font-mulish flex items-center gap-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span class="text-white">View financial insights at a glance</span>
+        </li>
+       
+    </ul>
+   <!-- Div for Button and Hyperlink -->
+
+   <!-- ============================
+            MEDIA QUERY
+      Normally we want this div to be in flex-col-reverse  direxn so that hyperlink comes at the top but from medium size screen onwards we want it to be as flex-row,thus from 768px onwards,it will be flex-row.Also items will be placed at center vertically from onwards of medium size screens but for the rest of the screen sizes as the flex direxn is column-reverse,items will be placed at start of the flex horizontolly since the main axis will be vertical and items-start will work on horizontal axis.Also gap-4 for medium screen size onwards otherwise gap along y-axis set to 6
+    ====================================-->
+   <div class="flex flex-col-reverse md:flex-row gap-y-6 md:items-center items-start md:space-x-6 w-full">
+    <!-- BUTTON IS OVERLAPPED BY A DIV WITH GREEN BACKGROUND WHICH IS TILTED AND AN ARROW IS PLACED WITHIN THIS DIV.Also using the button as div so that div and svg icon are placed in single horizontol line-->
+    <!-- NOTE:md:pr-[90px] IS PADDING RIGHT WHEN WIDTH IS MEDIUM(MEDIA QUERY) -->
+    <button class="relative bg-lightBlue flex items-center justify-center   text-white md:w-fit w-full  py-[14px] px-[18px] font-mulish rounded-md font-bold  hover:bg-lightBlue500 transition-colors duration-200 md:pr-[90px]">Sign Up
+
+        <!-- CREATING A DIV WITHIN THE BUTTON AND USING SKEW,WE TILT IT.USING IT A FLEX WE PLACE THE ARROW EXACTLY ATCENTER OF THE DIV  -->
+      <!--============================
+            MEDIA QUERY
+        Normally position the tilted div 44 from right but for medium screens onwards position it 6 from right (NOT IMPLEMENTED)  -->
+        <div class="w-12 h-[60px] bg-greenLight  absolute right-6  skew-x-[20deg] flex justify-center items-center">
+
+             <!-- ADDING ARROW ICON USING SVG.Using the svg as inline-block so that it comes horizontolly with button text.We can use button as flex as well if we do not use svg as inline-block.USING ANTI-SKEW(NEGATIVE DIREXN SKEW) WE CAN POSITION THE ARROW WITHOUT TILT BECOX THE PARENT GREEN DIV'S SKEW PROPERTY WILL MAKE IT SKEW AS WELL.-->
+             <svg
+             viewBox="0 0 24 24"
+             focusable="false"
+             class="w-[20px] h-[20px] -skew-x-[20deg] "
+           >
+             <path
+               fill="currentColor"
+               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+             ></path>
+           </svg>
+
+        </div> <!--TILT BOX DIV ENDS-->
+       
+    </button>
+    <!-- hyperlink -->
+    <!-- using class flex so that text and icon come horizontolly with each other.Also using it group so that when parent is hovered,we can see changes in child 'a' tag -->
+    <div class="flex items-center cursor-pointer group">
+        <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:text-[#2B84EA] transition-colors duration-200">Know More</a>
+        <!-- For the icon we have to set same properties for hover as we set for hyperlink -->
+        <i data-feather="chevron-right"
+        class="w-5 h-5 text-lightBlue500 group-hover:text-[#2B84EA] transition-colors duration-200"> </i>
+    </div>  
+    </div>
+   </div>   <!--Left Section div ends-->
+
+   <!-- Div for background image -->
+   <div>
+    <!-- Z-INDEX SET TO ZERO SO THAT IMAGES STAYS AS BOTTOM LAYER -->
+  <!-- ===============================
+            MEDIA QUERY
+      Normally keep the image hidden but for medium and large screens, display it as block.Also for large screens max-width is 600px with full height and for medium screens max-width is 400px and for rest of screen sizes it is by default set hidden-->
+      <img src="/images/buisness-banking.png" alt=""  loading="lazy"   class="absolute hidden lg:max-w-[600px] md:max-w-[400px] md:block lg:block lg:h-full right-0 bottom-0 z-0">
+   </div>
+</div>  <!--Content Box Div ends-->
+
+<!-- =============================
+           CARD-BOX
+================================== -->
+<!-- Creating a div for card boxes and making it a grid with 3 columns -->
+<!-- ==================================
+       MEDIA QUERY
+    Normally set single column,for medium screen size set 2 columns and for large screen sizes set 3 columns
+  ====================================== -->
+<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-6 my-12">
+
+    <!-- BOX-1 -->
+
+    <div class="w-full min-h-[14rem] relative cursor-pointer group ">
+        <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+          <img src="/images/current-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-purple-500 to-lightBlue">
+          <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+          <!-- below we used a drop-shadow with arbitary values as defined in tailwind documentation -->
+          <svg 
+            viewBox="0 0 349.32501220703125 225"                                                           
+            xmlns="http://www.w3.org/2000 svg"                                                               preserveAspectRatio="none"
+                    class="stroke-1 stroke-[#5b6075] h-full w-full absolute z-[9] transition-all duration-200 group-hover:stroke-none group-hover:drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)] "
+                     style="stroke-opacity: 0.8">
+                      <path
+                            d="m 0 6 
+                        a 6 6 0 0 1 6 -6 
+                        h 250.32501220703125 
+                        a 16 16 0 0 1 11 5 
+                        l 77 77 
+                        a 16 16 0 0 1 5 11 
+                        v 126 
+                        a 6 6 0 0 1 -6 6 
+                        h -337.32501220703125 
+                        a 6 6 0 0 1 -6 -6 
+                        z"
+                            fill="#181C2E"
+                      ></path>
+         </svg>
+    
+         <!-- box-content-div -->
+         <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+         <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-4 group ">
+            <!-- text-part of box-content -->
+            <div class="">
+                <h3 class="font-mulish font-bold text-white leading-[1.2] text-[1.375rem]">Current Account</h3>
+    
+                <p class="font-mulish text-grayText mt-6">Current accounts for fast-growing businesses, supported by the best-in-class technology</p>
+            </div>
+    
+            <!-- hyperlink and icon part of box-content -->
+            <div>
+                <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                <i data-feather="chevron-right"
+                class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+            
+            </div>
+         </div>  <!--box-content div ends-->
+         <!-- Wave on hover -->
+         <div>
+            <img src="/images/features2-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[40%]">
+         </div>
+     </div>
+
+    <!-- BOX-2 -->
+    <div class="w-full min-h-[12rem] relative cursor-pointer group">
+        <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+          <img src="/images/payouts-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-purple-500 to-lightBlue">
+          <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+          <!-- below we used a drop-shadow with arbitary values as defined in tailwind documentation -->
+          <svg 
+            viewBox="0 0 349.32501220703125 225"                                                           
+            xmlns="http://www.w3.org/2000 svg"                                                               preserveAspectRatio="none"
+                    class="stroke-1 stroke-[#5b6075] h-full w-full absolute z-[9] transition-all duration-200 group-hover:stroke-none group-hover:drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)]"
+                     style="stroke-opacity: 0.8">
+                      <path
+                            d="m 0 6 
+                        a 6 6 0 0 1 6 -6 
+                        h 250.32501220703125 
+                        a 16 16 0 0 1 11 5 
+                        l 77 77 
+                        a 16 16 0 0 1 5 11 
+                        v 126 
+                        a 6 6 0 0 1 -6 6 
+                        h -337.32501220703125 
+                        a 6 6 0 0 1 -6 -6 
+                        z"
+                            fill="#181C2E"
+                      ></path>
+         </svg>
+    
+         <!-- box-content-div -->
+         <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+         <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-4 group">
+            <!-- text-part of box-content -->
+            <div class="">
+                <h3 class="font-mulish font-bold text-white leading-[1.2] text-[1.375rem]">Payouts</h3>
+    
+                <p class="font-mulish text-grayText mt-6">Make simple, reliable & secure payouts to bank accounts, UPI IDs or wallets</p>
+            </div>
+    
+            <!-- hyperlink and icon part of box-content -->
+            <div>
+                <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                <i data-feather="chevron-right"
+                class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+            
+            </div>
+         </div>  <!--box-content div ends-->
+         <!-- Wave on hover -->
+         <div>
+            <img src="/images/features2-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[40%]">
+         </div>
+     </div>
+
+    <!-- BOX-3 -->
+
+    <div class="w-full min-h-[12rem] relative cursor-pointer group">
+        <!-- For image we have to z-index value lower than the rest becox it will be placed at bottom of the stack -->
+          <img src="/images/payment-pages-icon.svg" alt="" class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-0 transition-colors duration-200 group-hover:bg-gradient-to-tr from-purple-500 to-lightBlue">
+          <!-- box-shape using svg.The svg will be rendered as an outline only with position absolute and z-index higher than the image-->
+          <!-- below we used a drop-shadow with arbitary values as defined in tailwind documentation -->
+          <svg 
+            viewBox="0 0 349.32501220703125 225"                                                           
+            xmlns="http://www.w3.org/2000 svg"                                                               preserveAspectRatio="none"
+                    class="stroke-1 stroke-[#5b6075] h-full w-full absolute z-[9] transition-all duration-200 group-hover:stroke-none group-hover:drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)]"
+                     style="stroke-opacity: 0.8">
+                      <path
+                            d="m 0 6 
+                        a 6 6 0 0 1 6 -6 
+                        h 250.32501220703125 
+                        a 16 16 0 0 1 11 5 
+                        l 77 77 
+                        a 16 16 0 0 1 5 11 
+                        v 126 
+                        a 6 6 0 0 1 -6 6 
+                        h -337.32501220703125 
+                        a 6 6 0 0 1 -6 -6 
+                        z"
+                            fill="#181C2E"
+                      ></path>
+         </svg>
+    
+         <!-- box-content-div -->
+         <!-- The content needs to be stacked as top layer so setting highest z-index value from image(z-0) and svg(z-9) -->
+         <div class="z-10 absolute w-full h-full flex flex-col justify-evenly pl-5 pr-8 py-4 group">
+            <!-- text-part of box-content -->
+            <div class="">
+                <h3 class="font-mulish font-bold text-white leading-[1.2] text-[1.375rem]">Payroll</h3>
+    
+                <p class="font-mulish text-grayText mt-6">Set your payroll and compliances like TDS, ESIC, PT, & PF on autopilot.</p>
+            </div>
+    
+            <!-- hyperlink and icon part of box-content -->
+            <div>
+                <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                <i data-feather="chevron-right"
+                class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+            
+            </div>
+         </div>  <!--box-content div ends-->
+         <!-- Wave on hover -->
+         <div>
+            <img src="/images/features2-wave.svg" alt="" class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 w-[40%]">
+         </div>
+     </div>
+
+</div>  <!--CARD BOX DIV ENDS-->
+
+<!-------------- DEMO BOX--------------- -->
+<div class=" hidden md:flex md:flex-col lg:flex-row lg:flex md:gap-x-4 w-full items-center justify-evenly border border-slate-700 mb-24 md:gap-y-6 p-6 relative rounded-md">
+    <p class="font-mulish text-white text-xl "> Check out the live demo to learn how RazorpayX works.
+        <span class="font-bold">No sign-up required!</span> 
+    </p>
+   <!-- Button in Demo -->
+   <button class="relative bg-lightBlue flex items-center justify-center  text-white  m:w-full lg:w-auto  py-[14px] px-[16px] font-mulish rounded-md font-bold  hover:bg-lightBlue500 transition-colors duration-200 md:pr-[90px] h-[52px]">Check out the demo
+
+    <!-- CREATING A DIV WITHIN THE BUTTON AND USING SKEW,WE TILT IT.USING IT A FLEX WE PLACE THE ARROW EXACTLY ATCENTER OF THE DIV  -->
+    <div class="w-12 h-[60px] bg-greenLight absolute right-6 skew-x-[20deg] flex justify-center items-center">
+
+         <!-- ADDING ARROW ICON USING SVG.Using the svg as inline-block so that it comes horizontolly with button text.We can use button as flex as well if we do not use svg as inline-block.USING ANTI-SKEW(NEGATIVE DIREXN SKEW) WE CAN POSITION THE ARROW WITHOUT TILT BECOX THE PARENT GREEN DIV'S SKEW PROPERTY WILL MAKE IT SKEW AS WELL.-->
+         <svg
+         viewBox="0 0 24 24"
+         focusable="false"
+         class="w-[20px] h-[20px] -skew-x-[20deg] "
+       >
+         <path
+           fill="currentColor"
+           d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+         ></path>
+       </svg>
+
+    </div> <!--TILT BOX DIV ENDS-->
+   
+</button>
+
+</div> <!--DEMO BOX DIV ENDS-->
+
+
+</div> <!--main feature BOX div ends-->
+
+</div>  <!--Top level div ends-->
+
+</section> <!--Feature Section 2 Ends-->
+
+<!-- ============================
+        FEATURE SECTION 3
+    ============================= -->
+
+<section class="bg-white relative mt-8">
+
+     <!-- Top Level div to set width etc,acts as main container -->
+
+     <div class="w-11/12 max-w-[1080px] pt-4 mx-auto">
+        <!-- 2 dotted Images in background -->
+
+        <img src="/images/feature-section1-dottedrows.png" alt="" loading="lazy" class="absolute w-[233px] left-[440px] -top-[6rem] z-0">
+        <img src="/images/feature-section1-dottedrows.png" alt="" loading="lazy" class="absolute w-[233px] right-[5rem] -top-[5rem] z-0" >
+
+        <!-- Div for Grid to create 6 cards in 3 columns -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-x-4 gap-y-10 relative z-10  ">
+             <!-- item-1 -->
+            <div class="relative flex items-center">
+                <h2 class="text-deepBlueHead font-mulish font-extrabold text-4xl leading-[3.375rem]">New in the 
+                    <span class="text-lightBlue500">Razorpay</span> <br>
+                    Product Suite
+                 </h2>
+            </div>
+             <!-- Card-1 -->
+             <div class="p-10 pl-8  bg-[url(/images/instant-settlement-bg.svg)] bg-auto w-full  max-h-[300px] bg-no-repeat cursor-pointer hover:scale-105 transition-all duration-200 hover:bg-[url(/images/instant-settlement-bghover.svg)] rounded-md outline-gray-500 shadow-md hover:bg-cover hover:shadow-xl  bg-white relative">
+                <!-- top icon image -->
+                <img src="/images/razorpayXicon.svg" alt="" loading="lazy" class=" absolute top-4 left-6 w-10 h-10">
+                 <!-- content div -->
+                 <div class="flex flex-col justify-evenly h-full">
+                    <h3 class="font-mulish text-lg font-bold mt-7">Corporate Cards</h3>
+                    <p class="font-mulish py-3 text-grayText leading-normal">
+                        Settle your customer payments within 10 seconds as soon your account is activated, even during holidays.</p>
+                    <!-- hyperlink and icon -->
+                    <div class="flex cursor-pointer items-center group">
+                        <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+                    </div>
+                 </div>
+             </div>
+             <!-- Card-2 -->
+             <div class="p-10 pl-8  bg-[url(/images/instant-settlement-bg.svg)]  w-full  max-h-[300px] bg-no-repeat  cursor-pointer hover:scale-105 transition-all duration-200 hover:bg-[url(/images/instant-settlement-bghover.svg)] hover:bg-cover shadow-lg rounded-md outline-4 bg-white relative">
+                <!-- top icon image -->
+                <img src="/images/razorpayXicon.svg" alt="" loading="lazy" class=" absolute top-4 left-6 w-10 h-10">
+                 <!-- content div -->
+                 <div class="flex flex-col justify-evenly h-full">
+                    <h3 class="font-mulish text-lg font-bold mt-7">UPI AutoPay</h3>
+                    <p class="font-mulish py-3 text-grayText leading-normal">
+                        
+                        Allow customers to set up recurring payments using UPI Apps.</p>
+                    <!-- hyperlink and icon -->
+                    <div class="flex cursor-pointer items-center group">
+                        <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+                    </div>
+                 </div>
+             </div>
+             <!-- Card-3 -->
+             <div class="p-10 pl-8  bg-[url(/images/instant-settlement-bg.svg)]  w-full  max-h-[300px] bg-no-repeat  cursor-pointer hover:scale-105 transition-all duration-200 hover:bg-[url(/images/instant-settlement-bghover.svg)] hover:bg-cover shadow-lg rounded-md outline-4 bg-white relative">
+                <!-- top icon image -->
+                <img src="/images/razorpayXicon.svg" alt="" loading="lazy" class=" absolute top-4 left-6 w-10 h-10">
+                 <!-- content div -->
+                 <div class="flex flex-col justify-evenly h-full">
+                    <h3 class="font-mulish text-lg font-bold mt-7">Corporate Cards</h3>
+                    <p class="font-mulish py-3 text-grayText leading-normal">
+                        Settle your customer payments within 10 seconds as soon your account is activated, even during holidays.</p>
+                    <!-- hyperlink and icon -->
+                    <div class="flex cursor-pointer items-center group">
+                        <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+                    </div>
+                 </div>
+             </div>
+             <!-- Card-4 -->
+             <div class="p-10 pl-8  bg-[url(/images/instant-settlement-bg.svg)]  w-full  max-h-[300px] bg-no-repeat  cursor-pointer hover:scale-105 transition-all duration-200 hover:bg-[url(/images/instant-settlement-bghover.svg)] hover:bg-cover shadow-lg rounded-md outline-4 bg-white relative">
+                <!-- top icon image -->
+                <img src="/images/razorpayXicon.svg" alt="" loading="lazy" class=" absolute top-4 left-6 w-10 h-10">
+                 <!-- content div -->
+                 <div class="flex flex-col justify-evenly h-full">
+                    <h3 class="font-mulish text-lg font-bold mt-7">Corporate Cards</h3>
+                    <p class="font-mulish py-3 text-grayText leading-normal">
+                        Settle your customer payments within 10 seconds as soon your account is activated, even during holidays.</p>
+                    <!-- hyperlink and icon -->
+                    <div class="flex cursor-pointer items-center group">
+                        <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+                    </div>
+                 </div>
+             </div>
+             <!-- Card-5 -->
+             <div class="p-10 pl-8  bg-[url(/images/instant-settlement-bg.svg)]  w-full  max-h-[300px] bg-no-repeat  cursor-pointer hover:scale-105 transition-all duration-200 hover:bg-[url(/images/instant-settlement-bghover.svg)] hover:bg-cover shadow-lg rounded-md outline-4 bg-white relative">
+                <!-- top icon image -->
+                <img src="/images/razorpayXicon.svg" alt="" loading="lazy" class=" absolute top-4 left-6 w-10 h-10">
+                 <!-- content div -->
+                 <div class="flex flex-col justify-evenly h-full">
+                    <h3 class="font-mulish text-lg font-bold mt-7">Corporate Cards</h3>
+                    <p class="font-mulish py-3 text-grayText leading-normal">
+                        Settle your customer payments within 10 seconds as soon your account is activated, even during holidays.</p>
+                    <!-- hyperlink and icon -->
+                    <div class="flex cursor-pointer items-center group">
+                        <a href="#" class="font-mulish font-bold text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200">Know More</a>
+                    <i data-feather="chevron-right"
+                    class="w-5 h-4 -ml-1 text-lightBlue500 group-hover:opacity-70 transition-opacity duration-200 inline-block"> </i>
+                    </div>
+                 </div>
+             </div>
+
+        </div>  <!--Grid Div Ends-->
+
+     </div>  <!--Top Level Div ends-->
+
+</section>  <!--Feature Section 3 Ends-->
+
+<!-- ==============================
+            CORE FEATURES
+    =============================== -->
+
+    <!-- coreFeature is a class defined above in head tag to position background image of core feature section.Setting z-10 becox the next section must have z-index value lower than this section so that this section overlaps the next sectiion at the top -->
+<section class="bg-[url(/images/core-features-sectionBg.svg)] w-full bg-no-repeat bg-cover coreFeature mt-10 relative pb-14 z-10">
+
+    <!-- Top level container div -->
+    <div class="relative w-11/12 max-w-[1080px] mx-auto md:pt-[192px] pt-72 pb-[150px]">
+      
+        <h2 class="font-mulish font-bold text-2xl text-center text-white">Features</h2>
+        <div class="w-7 h-1 bg-greenLight mx-auto mt-4 mb-6"></div>
+        <p class="font-mulish  text-center max-w-[450px] text-white mx-auto">Empower your business with all the right tools to accept online payments and provide the best customer experience</p>
+
+        <!-- DIV FOR GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2rem] mt-8">
+
+          <!--CARD-1  -->
+          <div>
+            <img src="/images/instant-activation-icon.svg" alt="" loading="lazy">
+              <h3 class="font-mulish text-white text-lg font-bold my-4">Instant Activation</h3>
+              <p class="font-mulish text-white opacity-80">
+                Get activated and transact within 2 minutes. Completely online onboarding with minimum documentation.</p>
+          </div>
+          <!-- CARD-2 -->
+          <div>
+            <img src="/images/instant-activation-icon.svg" alt="" loading="lazy">
+              <h3 class="font-mulish text-white text-lg font-bold my-4">Instant Activation</h3>
+              <p class="font-mulish text-white opacity-80">
+                Get activated and transact within 2 minutes. Completely online onboarding with minimum documentation.</p>
+          </div>
+          <!-- CARD-3 -->
+          <div>
+            <img src="/images/instant-activation-icon.svg" alt="" loading="lazy">
+              <h3 class="font-mulish text-white text-lg font-bold my-4">Instant Activation</h3>
+              <p class="font-mulish text-white opacity-80">
+                Get activated and transact within 2 minutes. Completely online onboarding with minimum documentation.</p>
+          </div>
+          <!-- CARD-4 -->
+          <div>
+            <img src="/images/instant-activation-icon.svg" alt="" loading="lazy">
+              <h3 class="font-mulish text-white text-lg font-bold my-4">Instant Activation</h3>
+              <p class="font-mulish text-white opacity-80">
+                Get activated and transact within 2 minutes. Completely online onboarding with minimum documentation.</p>
+          </div>
+          <!-- CARD-5 -->
+          <div>
+            <img src="/images/instant-activation-icon.svg" alt="" loading="lazy">
+              <h3 class="font-mulish text-white text-lg font-bold my-4">Instant Activation</h3>
+              <p class="font-mulish text-white opacity-80">
+                Get activated and transact within 2 minutes. Completely online onboarding with minimum documentation.</p>
+          </div>
+          <!-- CARD-6 -->
+          <div>
+            <img src="/images/instant-activation-icon.svg" alt="" loading="lazy">
+              <h3 class="font-mulish text-white text-lg font-bold my-4">Instant Activation</h3>
+              <p class="font-mulish text-white opacity-80">
+                Get activated and transact within 2 minutes. Completely online onboarding with minimum documentation.</p>
+          </div>
+          <!-- CARD-7 -->
+          <div>
+            <img src="/images/instant-activation-icon.svg" alt="" loading="lazy">
+              <h3 class="font-mulish text-white text-lg font-bold my-4">Instant Activation</h3>
+              <p class="font-mulish text-white opacity-80">
+                Get activated and transact within 2 minutes. Completely online onboarding with minimum documentation.</p>
+          </div>
+          <!-- CARD-8 -->
+          <div>
+            <img src="/images/instant-activation-icon.svg" alt="" loading="lazy">
+              <h3 class="font-mulish text-white text-lg font-bold my-4">Instant Activation</h3>
+              <p class="font-mulish text-white opacity-80">
+                Get activated and transact within 2 minutes. Completely online onboarding with minimum documentation.</p>
+          </div>
+
+
+        </div>  <!--grid div ends-->
+
+    </div> <!--Top level div ends-->
+
+</section> <!--Core Section Div ends-->
+
+<!--============================   
+        JOIN-RAZORPAY-SECTION
+  ============================  -->
+
+  <!-- setting z-index less becox as we set the margin top in negative direxn,it will overlap the blue background of prevoius section,so lower z-index valuwe will set it as bottom layer so that background of previous section remains visible -->
+<section class="bg-[#f5f8fe] relative pt-40 pb-12 -mt-[300px] z-0">      
+
+    <!-- main container div -->
+    <div class="w-11/12 max-w-[1080px] relative mx-auto pt-24  flex flex-col md:flex-row md:items-start items-center justify-between">
+        
+        <!-- LEFT PART -->
+        <div class="flex flex-col justify-center md:max-w-[calc(100%-600px)] w-full pt-32">
+            <h2 class="font-mulish font-bold text-2xl text-deepBlue">Join the 50,00,000 businesses using Razorpay
+            </h2>
+            <div class="w-6 h-1  bg-greenLight  mb-8 mt-4"></div>
+            <p class="font-mulish">We make it easier for you to focus on building great products while we work on simplifying your payments. Become one of us by joining thousands of our happy users and simplify the online payment experience for your customers.</p>
+            <p class="font-mulish mt-8 mb-6 ">Focus on your business while we handle the complexities of payments for you.</p>
+
+            <!-- button -->
+            <button class="bg-lightBlue text-white rounded-sm font-mulish font-bold hover:bg-lightBlue500 transition-colors duration-200 py-[12px] px-[16px] cursor-pointer w-fit group">Get Started
+                <!-- ADDING ARROW IOCON USING SVG -->
+                <svg viewBox="0 0 24 24" focusable="false" class="text-white w-4 stroke-none inline-block"><path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+            </button>
+
+        </div>  <!--left div ends-->
+
+         <!-- RIGHT PART IMAGE DIV-->
+         <div class="h-[500px] w-[500px] relative overflow-y-hidden">
+
+        <!--Creating a div before the image which will be used to place a gradient at top of the image.'grad' is a class used to define gradient for the div defined above in head tag.Here we have to set z-index greater than or equal to the core feature section  so that it is visible becox z-index of core feature section is greater than join razorpay section and will overlap this div as well -->
+        <div class="absolute grad w-full h-[180px] top-0 z-10"></div>
+            <!-- positioning the image from 100%-460px becox 500px is the calculated width of image and extra 40px cut from images width will be used as space between left and right part.'companyList' is a class defined above in style tag for animation -->
+            <img src="/images/comanies.png" alt="" loading="lazy" class="object-cover  companyList absolute">
+       <!-- Creating a div after the image which will be used to place a gradient at bottom after the image.'grad1' is a class defined above in style tag  used to apply gradient to the divs -->
+       <div class="absolute grad1 w-full h-[180px] bottom-0"></div>
+
+         </div> <!--right part div ends-->
+    </div> <!--main container div ends-->
+
+</section>  <!--join razorpay ends-->
+
+<!-- ==========================
+       TESTIMONIAL SECTION
+============================= -->
+
+<section class="relative">
+
+    <!-- Container Div -->
+    <div class="w-11/12 max-w-[1200px] mx-auto relative py-24">
+       <img src="/images/feature-section1-dottedrows.png" alt="" loading="lazy" class="absolute w-[200px] top-[8rem] left-[2rem] -z-10">
+   
+       <h2 class="font-mulish font-bold text-2xl text-deepBlueHead text-center">An Experience <br>
+           People Love to Talk About</h2>
+       <div class="w-7 h-1 bg-greenLight mx-auto mt-4 mb-6"></div>
+       <!-- Left Arrow type Button.Button itself depicts outer circle -->
+       <button class="absolute left-0 top-1/2 w-[100px] h-[100px] bg-[#f4f8ff] rounded-full flex justify-center items-center">
+           <!-- inner circle div -->
+           <!-- mix blend mode in css refers how the background of child element blends with background of parent element and multiply is the value where child element's background is multiplied to the parent elements background i:e child element gets twice strong and same background as parent background  -->
+           <div class="w-[65%] h-[65%] bg-[#f4f8ff] rounded-full flex justify-center items-center mix-blend-multiply">
+            <i
+            data-feather="chevron-left"
+            class="w-6 h-6 md:w-10 md:h-10 text-gray-400 stroke-[5px]"></i>
+           </div>
+       </button >
+   
+       <!-- Main Content Div -->
+      <!-- =============================
+              MEDIA QUERY
+          Normally display flex-col but when screen size is xl(>=1280px),change to flex row.
+        Also the order of elements change,CEO name comes at top,then the company name and at last comes the paragraph text.This can be changed using order attribute.Also using self-start property on few of the flex items so that they dont appear at center when screen size is less than xl
+        Setting the same order to every flex item for xl screen size so that they appear in the DOM ordewr as placed in html file
+      ================================== -->
+        <div class="flex flex-col xl:flex-row max-w-[960px] items-center justify-around mx-auto my-20 gap-y-7">
+           <!-- left image -->
+           <img src="/images/testimonial.jpg" alt="" loading="lazy" class="h-[320px] w-[320px] rounded-xl">
+           <!-- right content -->
+            <div class="max-w-[420px] flex flex-col gap-2 items-center xl:items-start">
+            <img src="/images/quotes.svg" alt="" loading="lazy" class="w-[35px] h-[40px]  order-4 xl:order-1 self-start">
+            <p class="font-mulish text-3xl font-extralight order-5 xl:order-1">Acquire Customers From New Customer Segments</p>
+            <a href="#" class="text-gray-700 italic underline mt-2 order-6 xl:order-1 self-start ">Learn More</a>
+            <h3 class="font-mulish font-extrabold text-2xl order-1">John Doe</h3>
+            <p class="font-mulish font-medium order-2 xl:order-1">CEO,RENIX ENERGY LLP</p>
+            <img src="/images/fake-company-logo.png" alt="" loading="lazy" class="w-[80px] h-[40px] order-3 xl:order-1">
+            </div>
+        </div> <!--main content div ends-->
+   
+    <!-- Right Arrow type Button -->
+    <button class="absolute right-0 top-1/2 w-[100px] h-[100px] bg-[#f4f8ff] rounded-full flex justify-center items-center">
+       <!-- inner circle div -->
+       <div class="w-[65%] h-[65%] bg-[#f4f8ff] rounded-full flex justify-center items-center mix-blend-multiply">
+        <i
+        data-feather="chevron-right"
+        class="w-6 h-6 md:w-10 md:h-10 text-gray-400 stroke-[5px]"></i>
+       </div>
+   </button>
+     <!-- 6 dot div -->
+     <div class="flex mx-auto justify-center items-center space-x-2">
+        <!-- dot-1 -->
+             <div class="h-[10px] w-[10px] bg-gray-300 rounded-full">
+    
+             </div>
+              <!-- dot-2 -->
+              <div class="h-[10px] w-[10px] bg-lightBlue300 rounded-full">
+    
+              </div>
+               <!-- dot-3 -->
+             <div class="h-[10px] w-[10px] bg-gray-300 rounded-full">
+    
+             </div>
+            <!-- dot-4 -->
+             <div class="h-[10px] w-[10px] bg-gray-300 rounded-full">
+    
+             </div>
+              <!-- dot-5 -->
+              <div class="h-[10px] w-[10px] bg-gray-300 rounded-full">
+    
+              </div>
+               <!-- dot-6 -->
+             <div class="h-[10px] w-[10px] bg-gray-300 rounded-full">
+    
+             </div>
+
+       </div> <!--6 dot div container ends-->
+  
+   
+    </div> <!--container div ends-->
+   
+   
+   </section>  <!--Testimonial section ends-->
+
+<!-- ==========================
+       C.T.A SECTION
+    ======================== -->
+   <!-- bg-[90%_100%] where 90% makes the image start from left edge horizontolly but only 90% of image will be included in 100% of width -->
+<section class="bg-[url(/images/CTABg.svg)] w-full h-full bg-no-repeat bg-[86%_100%] bg-cover relative -mt-28">
+
+  <!-- main container div -->
+     <div class="w-11/12 max-w-[1080px] h-full relative flex flex-row items-center  gap-x-20 mx-auto py-36">
+
+     <!-- Left part -->
+     <div class="flex flex-col  max-w-[730px] h-full gap-y-6">
+
+        <h2 class="font-mulish text-2xl font-bold text-white">Supercharge your business with Razorpay</h2>
+        <div class="w-6 h-1 bg-greenLight mb-6"></div>
+        <p class="font-mulish text-white">Sign up now to experience the future of payments and offer <br> your customers the best checkout experience.</p>
+
+        <ul class="flex gap-x-6  text-white items-center sm:flex-wrap lg:flex-nowrap">
+
+            <li class="flex font-mulish text-white gap-4">
+                <i data-feather="check" class="text-greenLight"></i>
+                <span>Quick Onboarding</span>
+            </li>
+
+            <li class="flex font-mulish text-white gap-1">
+                <i data-feather="check" class="text-greenLight"></i>
+                <span>Access to entire product suite</span>
+            </li>
+            <li class="flex font-mulish text-white gap-1">
+                <i data-feather="check" class="text-greenLight"></i>
+                <span>API access</span>
+            </li>
+            <li class="flex font-mulish text-white gap-1">
+                <i data-feather="check" class="text-greenLight"></i>
+                <span>24x7 support</span>
+            </li>
+        </ul>
+
+        <button class="bg-white w-fit in-w-[32px] text-sm text-lightBlue  border text-opacity-85 py-[14px] px-[18px] font-mulish rounded-sm font-bold  hover:text-lightBlue500 transition-colors duration-200 group mb-6">Sign Up Now
+            <!-- ADDING ARROW ICON USING SVG.Using the svg as inline-block so that it comes horizontolly with button text.We can use button as flex as well if we do not use svg as inline-block -->
+            <svg viewBox="0 0 24 24" focusable="false" class="text-lightBlue300 w-5 stroke-none inline-block group-hover:text-lightBlue500"><path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+        </button>
+     
+     </div> <!--left part div ends--> 
+
+      <!-- RIGHT SIDE IMAGE -->
+      <img src="/images/ctaImg.svg" alt="" loading="lazy" class="w-[240px] h-[282px] hidden lg:block">
+
+  </div> <!--container div ends-->
+
+</section> <!--CTA SECTION ENDS-->
+
+<!-- ==========================
+         FOOTER
+    =========================== -->
+  <footer class="-mt-[400px] md:-mt-[300px] bg-gradient-to-r from-[#eef9fe] to-[#edf7ff]">
+
+     <!-- main footer div -->
+     <div class="w-10/12 max-w-[1080px] pb-10 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between gap-x-8 md:pt-64 pt-72">
+
+     <!-- ===========================
+            ist column div 
+        ============================-->
+     <div class="flex flex-col md:max-w-[340px] lg:max-w-[260px] ">
+        <img src="/images/logo-dark.svg" alt="" loading="lazy" class="w-[120px] h-[24px]">
+
+        <p class="text-sm text-grayText my-3 font-mulish">
+            Razorpay is the only payments solution in India that allows
+            businesses to accept, process and disburse payments with its product
+            suite. It gives you access to all payment modes including credit
+            card, debit card, netbanking, UPI and popular wallets including
+            JioMoney, Mobikwik, Airtel Money, FreeCharge, Ola Money and PayZapp.
+    </p>
+    <p class="text-sm text-grayText my-3 font-mulish">
+            RazorpayX supercharges your business banking experience, bringing
+            effectiveness, efficiency, and excellence to all financial
+            processes. With RazorpayX, businesses can get access to
+            fully-functional current accounts, supercharge their payouts and
+            automate payroll compliance.
+    </p>
+    <p class="text-sm text-grayText my-3 font-mulish">
+            Manage your marketplace, automate bank transfers, collect recurring
+            payments, share invoices with customers and avail working capital
+            loans - all from a single platform. Fast forward your business with
+            Razorpay.
+    </p>
+    <p class="text-[0.625rem] text-grayText my-3 font-mulish">
+            Disclaimer: The RazorpayX powered Current Account and VISA corporate
+            credit card are provided by RBI licensed banks. Your RazorpayX
+            powered account is provided by our partner bank, in accordance with
+            RBI regulations. RazorpayX itself is not a bank and doesn't hold or
+            claim to hold a banking license.
+     </p>
+    <p class="font-mulish uppercasefont-bold text-gray-500">Subscribe to our Newsletter</p>
+
+    <form action="#" class="relative bg-white w-[260px] mt-2 mb-4">
+
+        <!-- focus:outline-lightBlue is setting the outline color of the focused element to light blue.Element is focused either when selected clicked -->
+      <input type="email" name="email" id="email" placeholder="Enter Your Email" class="pr-[74px] font-mulish border-gray-300 
+      outline-lightBlue relative z-0 focus:outline-lightBlue 
+       placeholder:text-sm py-2 pl-2 border rounded-sm transition-all duration-200">
+   
+       <button class="h-[90%] bg-white z-10 absolute right-0 top-1/2 -translate-y-1/2  font-mulish text-sm font-bold text-lightBlue300 flex rounded-sm items-center hover:text-lightBlue500 transition-all duration-200 ">
+
+        Subscribe
+    <svg
+        viewBox="0 0 24 24"
+        focusable="false"
+        class="w-[14px] h-[14px] ml-2"
+      >
+        <path
+          fill="currentColor"
+          d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+        ></path>
+    </svg>
+
+    </button>
+   
+    </form>
+<!-- div for 2 image cards -->
+<div class="flex items-start space-x-4">
+    <img
+      src="/images/footer-certificate-1.png"
+      loading="lazy"
+      width="92"
+      height="40"
+      class="cursor-pointer"
+    />
+    <img
+      src="/images/footer-certificate-2.jpg"
+      loading="lazy"
+      width="122"
+      height="80"
+      class="cursor-pointer"
+    />
+  </div>
+   
+
+
+    </div> <!--ist column div ends-->
+
+   <!-- CONTAINER DIV FOR REST 3 COLUMNS.This div is purely created to simplify things for responsiveness becox for medium screen sizes the 3rd,4th and 5th column comes in next line as a separate flex -->
+    <div class="flex md:flex-row flex-col mt-12 md:mt-6 lg:mt-0 gap-x-12">
+     <!-- ===========================
+            2ND COLUMN div 
+        ============================-->
+       
+        
+    <div class="flex flex-col space-y-4 justify-between">
+        <!-- sub-column-1 -->
+        <div class="space-y-3">
+            <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+                BANKING PLUS
+              </p>
+
+              <ul class="space-y-2">
+                <li>
+                    <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                    >RazorpayX</a
+                  >
+                </li>
+                <li>
+                    <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >Current Accounts</a
+                >
+                </li>
+                <li>
+                    <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >Payouts</a
+                >
+                </li>
+                <li>
+                    <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                    >Payout Links</a
+                  >
+                </li>
+                <li>
+                    <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >Corporate Credit Card</a
+                >
+                </li>
+                <li>
+                    <a
+                  href="#"
+                  class="relative font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >
+                  View Live Demo
+                  <span
+                    class="text-white font-mullish uppercase bg-green-500 rounded-sm text-xs font-bold p-1"
+                    >New</span
+                  >
+                </a>
+                </li>
+              </ul>
+           
+        </div> <!--sub-col-1-ends-->
+
+        <!-- sub-column-2 -->
+        <div class="space-y-3">
+
+            <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+                LENDING
+              </p> 
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                    >Razorpay Capital</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                    >Instant Settlements</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                    >Working Capital Loans</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                    >Marketplace Instant Settlements</a
+                  >
+                </li>
+              </ul>
+
+        </div> <!--sub-column-2 ends-->
+
+        <!-- sub-column-3 -->
+
+        <div class="space-y-3">
+          
+            <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+                RISK & FRAUD
+              </p>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                    >Thirdwatch</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >
+                    PrePay CoD
+                    <span
+                      class="text-white font-mullish uppercase bg-green-500 rounded-sm text-xs font-bold p-1"
+                      >New</span
+                    >
+                  </a>
+                </li>
+              </ul>
+
+        </div> <!--sub-column-3 ends-->
+
+        <!-- sub-column-4 -->
+        <div class="space-y-3">
+
+            <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+                BECOME A PARTNER
+              </p>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                    >Refer and Earn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >
+                    Onboarding APIs
+                  </a>
+                </li>
+              </ul>
+           
+
+        </div> <!--sub column-4 ends-->
+
+        <!-- sub-column-5 -->
+        <div class="space-y-3">
+            <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+              MORE
+            </p>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >Route</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >Invoices</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >Freelancer Payments</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >International</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >Flash Checkout</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >UPI</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >ePOS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >Checkout Demo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                  >RazorpayX Payroll</a
+                >
+              </li>
+            </ul>
+          </div>  <!--sub-column-5 ends-->
+
+    </div> <!--2nd column div ends-->
+    
+ <!--==============================
+       3RD column div
+   ==============================  -->
+   <div class="flex flex-col space-y-4 justify-between ">
+    
+    <!-- sub-column-1 -->
+     <div class="space-y-3">
+        <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+            ACCEPT PAYMENTS
+          </p>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Payment Gateway</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Payment Pages</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Payment Links</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >QR Codes</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Subscriptions</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                Smart Collect
+              </a>
+            </li>
+          </ul>
+     </div> <!--sub-col-1 of (COL-3)-ends-->
+    
+     <!-- sub-column-2 -->
+     <div class="space-y-3">
+        <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+            DEVELOPERS
+          </p>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Docs</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Integrations</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >API Reference</a
+              >
+            </li>
+          </ul>
+
+     </div> <!--sub-column-2 of (COL-3)-ends-->
+
+     <!-- SUB-COLUMN-3 -->
+    <div class="space-y-3">
+       
+        <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+            RESOURCES
+          </p>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="relative font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                Customer Stories
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="relative font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                Events
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="relative font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                Chargeback Guide
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="relative font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                Settlement Guide
+              </a>
+            </li>
+          </ul>
+
+     </div> <!--sub-column-3 of (COL-3)-ends-->
+
+     <!-- Sub-column-4 -->
+
+     <div class="space-y-3">
+       
+        <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+            SOLUTIONS
+          </p>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                E-commerce
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                Saas
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                BFSI
+              </a>
+            </li>
+          </ul>
+
+     </div> <!--sub-column-4 of (COL-3) ends-->
+
+     <!-- sub-column-5 -->
+      <div class="space-y-3">
+
+        <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+            FREE TOOLS
+          </p>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >GST Calculator</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                >Online TDS Payment</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="relative font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+              >
+                GST Number Search
+                <span
+                  class="text-white font-mullish uppercase bg-green-500 rounded-sm text-xs font-bold p-1"
+                  >New</span
+                >
+              </a>
+            </li>
+          </ul>
+
+      </div> <!--SUB-COLUMN-5 OF (COL-3) ENDS-->
+
+
+   </div> <!--3rd column div ends-->
+
+   <!-- ===============================
+           4TH COLUMN DIV
+        ==============================-->
+        <div class="flex flex-col space-y-4 justify-between ">
+
+            <!-- SUB-COLUMN-1 -->
+            <div class="space-y-3">
+                <p class="font-mullish uppercase font-bold text-gray2 mb-1">
+                    COMPANY
+                  </p>
+                  <ul class="space-y-2">
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                        >About Us</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish relative font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                        >Careers
+                        <span
+                          class="text-white font-mullish bg-green-500 rounded-sm text-xs font-bold p-1"
+                          >We're hiring!</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                        >Terms of Use</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                        >Privacy Policy</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                        >Grievance Redressal</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                      >
+                        Responsible Disclosure
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                      >
+                        Partners
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                      >
+                        White Papers
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                      >
+                        Corporate Information
+                      </a>
+                    </li>
+                  </ul>
+            </div>
+
+            <!-- SUB-COLUMN-2 -->
+            <div class="space-y-3">
+                <p class="font-mullish uppercase font-bold text-gray2 mb-1 mt-3">
+                    HELP & SUPPORT
+                  </p>
+                  <ul class="space-y-2">
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                        >Support</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="font-mullish font-medium text-lightBlue500 hover:text-grayBlue transition-all duration-200"
+                        >Knowledge base</a
+                      >
+                    </li>
+                  </ul>
+            </div>
+
+             <!-- SUB-COLUMN-3 -->
+             <div class="space-y-3">
+                <p class="font-mullish uppercase font-bold text-gray2 mb-1 mt-6">
+                    FIND US ONLINE
+                  </p>
+                  <ul class="flex space-x-4 items-center mt-4">
+                    <li class="cursor-pointer">
+                      <a>
+                        <img
+                          src="/images/facebook-icon.svg"
+                          width="24"
+                          height="24"
+                          loading="lazy"
+                        />
+                      </a>
+                    </li>
+                    <li class="cursor-pointer">
+                      <a>
+                        <img
+                          src="/images/twitter-icon.svg"
+                          width="24"
+                          height="24"
+                          loading="lazy"
+                        />
+                      </a>
+                    </li>
+                    <li class="cursor-pointer">
+                      <a>
+                        <img
+                          src="/images/instagram-icon.svg"
+                          width="24"
+                          height="24"
+                          loading="lazy"
+                        />
+                      </a>
+                    </li>
+                    <li class="cursor-pointer">
+                      <a>
+                        <img
+                          src="/images/github-icon.svg"
+                          width="24"
+                          height="24"
+                          loading="lazy"
+                        />
+                      </a>
+                    </li>
+                    <li class="cursor-pointer">
+                      <a>
+                        <img
+                          src="/images/linkedin-icon.svg"
+                          width="24"
+                          height="24"
+                          loading="lazy"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+             </div>
+
+              <!-- SUB-COLUMN-4 -->
+            <div class="space-y-3">
+                <p class="font-mullish uppercase font-bold text-gray2 mb-1 mt-6">
+                    REGD. OFFICE ADDRESS
+                  </p>
+                  <p class="font-mullish text-sm mt-4 whitespace-nowrap">
+                    Razorpay Software Private Limited, <br />1st Floor, SJR Cyber,
+                    <br />22 Laskar Hosur Road, Adugodi, <br />Bengaluru, 560030,
+                    <br />Karnataka, India <br />CIN: U72200KA2013PTC097389
+                  </p>
+                  <div class="font-mullish pt-8">
+                    <p class="text-sm">© Razorpay 2024</p>
+                    <p class="text-sm">All Rights Reserved</p>
+                  </div>
+            </div>
+
+
+
+
+        </div> <!--4TH COLUMN DIV ENDS-->
+
+      </div>  <!--container div for 2nd,3rd and 4th column-->
+
+    </div> <!--main ft div ends-->
+
+  </footer>
+
+<!-- ADDING SCRIPT FOR FEATHER ICONS -->
+<script>
+    feather.replace()
+</script>
+
+
+</div>  <!--WRAPPER DIV ENDS-->
+</body>
+</html>
